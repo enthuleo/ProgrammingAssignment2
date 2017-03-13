@@ -26,11 +26,10 @@ makeCacheMatrix <- function(x = matrix()) {
 
 
 ## Write a short comment describing this function
-Function “cacheSolve” computes the inverse of the special “matrix” (which is the input of cachemean) 
-returned by makeCacheMatrix above. If the inverse has already been calculated (and the matrix has not changed), 
+Function “cacheSolve” computes the inverse of the special “matrix” returned by makeCacheMatrix above. If the inverse has already been calculated (and the matrix has not changed), 
 then the cachesolve should retrieve the inverse from the cache. If the inverse has not been calculated,
- data gets the matrix stored in the  makeCacheMatrix, m calculates the inverse,
-and x$setinverse(m) stores it in the object m in makeCacheMatrix.
+data gets the matrix stored in the  makeCacheMatrix.
+
 cacheSolve <- function(x, ...) {
       m <- x$getinverse()
       if(!is.null(m)) {
@@ -41,5 +40,6 @@ cacheSolve <- function(x, ...) {
       m <- solve(data, ...)
       x$setinverse(m)
       m
-}## Return a matrix that is the inverse of 'x'
+}
+       ## Return a matrix that is the inverse of 'x'
 
